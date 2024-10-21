@@ -10,5 +10,18 @@
 <body>
     <h1><span><</span> rut-check<span>></span></h1>
     <span>A component to check the rut format using an input</span>
+
+    <section>
+        <input id="rutInput"  type="text" format="" is="rut-check">
+    </section>
+    <script type="module" src="../dist/index.js"></script>
+
+    <script>
+        const rutInput =  document.querySelector("#rutInput")
+        rutInput.addEventListener("rutCheck", (e) =>{
+            console.log(e.detail.isValidate)
+        })
+    </script>
+
 </body>
 </html>

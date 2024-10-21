@@ -2,11 +2,19 @@
   "name": "rut-check-element",
   "version": "1.0.0",
   "description": "An input to check the rut format",
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./index.js",
+    "require": "./index.cjs"
+  },
   "scripts": {
     "test": "karma start test/karma.config.js",
-    "build": "tsc",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "build": "rollup -c ",
+    "compile": "tsc"
   },
   "repository": {
     "type": "git",
@@ -23,6 +31,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
+    "@rollup/plugin-typescript": "^12.1.1",
     "eslint": "^9.12.0",
     "globals": "^15.11.0",
     "karma": "^6.4.4",
@@ -31,6 +40,16 @@
     "karma-mocha": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
     "mocha": "^10.7.3",
+    "rollup": "^4.24.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "typescript-eslint": "^8.10.0"
+  },
+  "eslintIgnore": [
+    "build/",
+    "dist/",
+    "rollup.config.js"
+  ],
+  "dependencies": {
+    "tslib": "^2.8.0"
   }
 }
