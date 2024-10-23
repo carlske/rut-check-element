@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1><span><</span> rut-check<span>></span></h1>
+    <span>A component to check the rut format using an input</span>
+
+    <section>
+        <input id="rutInput"  type="text" format="" is="rut-check">
+    </section>
+    <script type="module" src="index.js"></script>
+
+    <script>
+        const rutInput =  document.querySelector("#rutInput")
+        rutInput.addEventListener("rutCheck", (e) =>{
+            console.log(e.detail.isValidate)
+        })
+    </script>
+
+</body>
+</html>
